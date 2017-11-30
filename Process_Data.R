@@ -51,8 +51,8 @@ sample_names <- sapply(strsplit(filenames_forward_reads, "\\."), `[`, 1)
 filenames_forward_reads <- file.path(path, filenames_forward_reads)
 
 ## ----check-quality-plots-------------------------------------------------
-# Plots the quality profiles of all twenty samples
-plotQualityProfile(filenames_forward_reads[1:20])
+# Plots the quality profiles of all sixty-eight samples
+plotQualityProfile(filenames_forward_reads[1:68])
 
 ## ----filter-reads--------------------------------------------------------
 # Place filtered files in filtered/ subdirectory
@@ -63,7 +63,7 @@ filtered_reads_path <- file.path(filter_path,
                                         "_filt.fastq.gz"))
 
 # See ?filterAndTrim for details on the parameters
-# See here for adjustments for 454 data:
+# See here for adjustments for Illumina data:
 # https://benjjneb.github.io/dada2/
 #     faq.html#can-i-use-dada2-with-my-454-or-ion-torrent-data
 filtered_output <- filterAndTrim(fwd = filenames_forward_reads,
