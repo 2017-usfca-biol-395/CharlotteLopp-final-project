@@ -7,7 +7,7 @@
 
 export PATH=$PATH:/Users/charlottelopp/Desktop/CharlotteLopp-final-project/sratoolkit.2.8.2-1-mac64/bin
 
-# Code to download the list of fles in the run table of the raw data directory
+# Code to download the list of files in the run table of the raw data directory
 for SRA_number in $(cut -f 8 data/metadata/SraRunTable.txt | tail -n +2)
 do
     fastq-dump -v $SRA_number -O data/raw_data

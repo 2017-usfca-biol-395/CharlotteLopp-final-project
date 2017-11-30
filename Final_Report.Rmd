@@ -86,6 +86,17 @@ library("phyloseq")
 # This loads my separate R script file that processed the data
 load("output/phyloseq_obj.RData")
 ```
+
+```{r load-supplementary-table, echo = FALSE}
+# Supplementary table in addition to metadata_in
+supplementary_table <- read.table(paste0("data/metadata/",
+                                 "zam999117343sd2.txt"),
+                          sep = "\t",
+                          header = TRUE,
+                          stringsAsFactors = FALSE)
+```
+
+
 In addition to a minimum of 5-10 figures/tables (and associated captions), you should include sufficient text in this section to describe what your findings were. Remember that in the results section you just describe what you found, but you don't interpret it - that happens in the discussion. 2-3 pages.
 
 # Discussion
