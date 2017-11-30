@@ -37,17 +37,6 @@ Computation with this data began with creating a bashscript with code which down
 
 # Results
 
-## Subsections are ok in the results section too
-
-```{r your-code-here}
-# Add code chunks as needed for your analyses
-# For most analyses, I would recommend splitting the
-# intensive computational part into a seperate R script file
-# and then just load your libraries and the data object here
-# using the `load()` function. Ask me for clarification if this is
-# unclear.
-```
-
 ```{r load-libraries, message = FALSE, echo = FALSE}
 # Be sure to install these packages before running this script
 # They can be installed either with the intall.packages() function
@@ -96,6 +85,30 @@ supplementary_table <- read.table(paste0("data/metadata/",
                           stringsAsFactors = FALSE)
 ```
 
+```{r count-by-age, echo = FALSE}
+merged.data %>%
+  group_by(age) %>%
+  tally() %>%
+  ggplot(aes(x = age,
+             y = n,
+             fill = age)) +
+    geom_col(position = "dodge") +
+    xlab("Age") +
+    ylab("Count") +
+    ggtitle("Distribution of Patients Across Age at Breast Surgery")
+```
+
+```{r age-by-cancer-stage-by-smoking-status, echo = FALSE}
+# this code looks at the relationship among cancer stage, age of diagnosis and smoking status
+final_table %>%
+  ggplot(aes(x = cancer_stage,
+             y = age_at_diagnosis)) +
+      geom_point(size = 1, aes(color = smoking_status)) +
+      ylab("Age at Diagnosis") +
+      xlab("Cancer Stage") +
+      ggtitle("The Relationship Between Age at Diagnosis and Cancer Stage by 
+              Smoking Status")
+```
 
 In addition to a minimum of 5-10 figures/tables (and associated captions), you should include sufficient text in this section to describe what your findings were. Remember that in the results section you just describe what you found, but you don't interpret it - that happens in the discussion. 2-3 pages.
 
