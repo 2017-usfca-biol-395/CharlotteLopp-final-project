@@ -13,6 +13,8 @@ csl: bioinformatics.csl
 
 Add about 2-3 pages here. Across the whole manuscript, you should cite at least 20 peer reviewed articles.
 
+Breast cancer affects affects one in eight women in their lifetime and according to the American Cancer Society, it is the second leading cause of cancer death in women with only lung cancer killing more women each year. Over the past twenty years $5.5 billion has been dedicated to breast cancer research but the origins of a majority of breast cancer cases remain unknown [@madigan1995proportion]. Part of what is known is that environmental factors as well as genetics play a role in disease development but which environmental factors and the extent of their influence is still being explored [@urbaniak2016microbiota]; diet, age and genetic disposition are established risk factors [@xuan2014microbial]. In fact, there are many epidemiological evidences and research studies that have suggested that diet plays an important role in breast cancer prevention and progression [@aragon2014modification]. Specifically, there are recent studies that suggest that eating fermented foods such as probiotic yogurt play a role in providing protection [@lakritz2014beneficial]. The recent appreciation of the influential role that microbiota has on human health and disease has led to the investigation of if microbes play a role in breast cancers and if they do, to what extent [@xuan2014microbial].
+
 # Methods
 
 ## Study design
@@ -40,6 +42,44 @@ These are the methods you used to do your bioinformatic analyses analyses. Shoul
 # unclear.
 ```
 
+```{r load-libraries, message = FALSE, echo = FALSE}
+# Be sure to install these packages before running this script
+# They can be installed either with the intall.packages() function
+# or with the 'Packages' pane in RStudio
+
+# load general-use packages
+library("dplyr")
+library("tidyr")
+library("knitr")
+library("ggplot2")
+
+# this package allows for the easy inclusion of literature citations in our Rmd
+# more info here: https://github.com/crsh/citr
+# and here:
+# http://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html
+library("citr")
+
+# These are the primary packages well use to clean and analyze the data
+# this package needs to be installed from bioconductor -- it's not on CRAN
+# see info here: https://benjjneb.github.io/dada2/dada-installation.html
+library("dada2")
+
+# This to export a fasta of our final denoised sequence variants
+library("seqinr")
+
+# To install this you have to install from GitHub
+# See more info here: https://github.com/leffj/mctoolsr
+# run this -- install.packages("devtools")
+# and then this -- devtools::install_github("leffj/mctoolsr")
+library("mctoolsr")
+
+# And this to visualize our results
+# it also needs to be installed from bioconductor
+library("phyloseq")
+
+# This loads my separate R script file that processed the data
+load("output/phyloseq_obj.RData")
+```
 In addition to a minimum of 5-10 figures/tables (and associated captions), you should include sufficient text in this section to describe what your findings were. Remember that in the results section you just describe what you found, but you don't interpret it - that happens in the discussion. 2-3 pages.
 
 # Discussion
