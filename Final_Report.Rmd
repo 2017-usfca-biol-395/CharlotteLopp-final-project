@@ -72,6 +72,9 @@ library("mctoolsr")
 # it also needs to be installed from bioconductor
 library("phyloseq")
 
+# Add this for combining two different graphs
+library("grid")
+
 # This loads my separate R script file that processed the data
 load("output/phyloseq_obj.RData")
 ```
@@ -132,7 +135,7 @@ melted_phyloseq %>%
     ggtitle("Relative Abundance of Bacterial Phyla")
 ```
 
-```{r mean-and-sd-rel-abund echo = FALSE}
+```{r mean-and-sd-rel-abund, echo = FALSE}
 melted_phyloseq %>%
   filter(OTU %in% top_genes) %>%
   group_by(Genus, tissue_type.1) %>%
@@ -154,7 +157,7 @@ melted_phyloseq %>%
             Genera Between Tissue Types Separated by Genus")
 ```
 
-```{r type-of-tumour-by-abundance}
+```{r type-of-tumour-by-abundance, echo = FALSE}
 melted_phyloseq %>%
   filter(OTU %in% top_genes) %>%
   group_by(Genus, type_of_tumour) %>%
@@ -171,8 +174,37 @@ melted_phyloseq %>%
       ggtitle("Relative Abundance of Bacterial Genera Among Tumour Types")
 ```
 
+```{r cancer-stage-by-abundance, echo = FALSE}
+p1 <- melted_phyloseq %>%
+  group_by(stage_of_cancer) %>%
+  tally() %>%
+  ggplot(aes(x = stage_of_cancer,
+             y = n,
+             fill = stage_of_cancer)) +
+  geom_col(position = "dodge") +
+  xlab("Cancer Stage") +
+  ylab("Count")
+
+p2 <- melted_phyloseq %>%
+  filter(OTU %in% top_genes) %>%
+  group_by(Genus, stage_of_cancer) %>%
+  summarize(mean_abund = mean(Abundance)) %>%
+  ggplot(aes(x = stage_of_cancer,
+             y = mean_abund,
+             fill = Genus)) +
+  geom_col(color = "black") +
+  theme(axis.text.x =
+          element_text(angle = 90,
+                       hjust = 1)) +
+  ylab("Relative Abundance") +
+  xlab("Cancer Stage") +
+
+grid.newpage()
+grid.draw(rbind(ggplotGrob(p1), ggplotGrob(p2), size = "last"))
+```
+
 ```{r count-by-age-box-plot, echo = FALSE}
-merged_data %>%
+melted_phyloseq %>%
   group_by(tissue_type.1, age) %>%
   ggplot(aes(x = tissue_type.1,
              y = age,
@@ -183,16 +215,6 @@ merged_data %>%
     ggtitle("Difference of Age at Breast Surgery by Tissue Type")
 ```
 
-```{r age-by-cancer-stage-by-smoking-status, echo = FALSE}
-# this code looks at the relationship among cancer stage, age of diagnosis and smoking status
-merged_data %>%
-  ggplot(aes(x = stage_of_cancer,
-             y = age)) +
-      geom_point(size = 1, aes(color = stage_of_cancer)) +
-      ylab("Age at Breast Surgery") +
-      xlab("Cancer Stage") +
-      ggtitle("The Relationship Between Age at Breast Surgery and Cancer Stage")
-```
 
 In addition to a minimum of 5-10 figures/tables (and associated captions), you should include sufficient text in this section to describe what your findings were. Remember that in the results section you just describe what you found, but you don't interpret it - that happens in the discussion. 2-3 pages.
 
