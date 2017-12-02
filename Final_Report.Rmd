@@ -1,6 +1,6 @@
 ---
 title: "Final Report: Your Title Here"
-author: "Don Francisco"
+author: "Charlotte Lopp"
 date: "November 22, 2017"
 output:
     github_document: default
@@ -173,9 +173,35 @@ melted_phyloseq %>%
       xlab("Type of Tumour") +
       ggtitle("Relative Abundance of Bacterial Genera Among Tumour Types")
 ```
+```{r see-message, echo = FALSE}
+# When trying to knit, got error message 
+# regarding "merged_data." Orginally changed it
+# to "melted_phyloseq" but then p1 (in next r chunk)
+# ended up with incorrect y axis values. So
+# loading this data since the this table wasn't
+# loaded in the beginning of the results section
+# with the command "load("output/phyloseq_obj.RData")"
+
+metadata_in <- read.table(paste0("data/metadata/",
+                                 "SraRunTable.txt"),
+                          sep = "\t",
+                          header = TRUE,
+                          stringsAsFactors = FALSE,
+                          row.names = 8) 
+
+supplementary_table <- read.csv(paste0("data/metadata/",
+                                  "zam999117343_sd2_supp_data.csv"),
+                                  header = TRUE,
+                                  stringsAsFactors = FALSE)
+
+metadata_in$Run_s <- row.names(metadata_in)
+merged_data <- merge(metadata_in, supplementary_table,
+                     by = "Sample_Name_s")
+row.names(merged_data) <- merged_data$Run_s
+```
 
 ```{r cancer-stage-by-abundance, echo = FALSE}
-p1 <- melted_phyloseq %>%
+p1 <- merged_data %>%
   group_by(stage_of_cancer) %>%
   tally() %>%
   ggplot(aes(x = stage_of_cancer,
@@ -183,7 +209,8 @@ p1 <- melted_phyloseq %>%
              fill = stage_of_cancer)) +
   geom_col(position = "dodge") +
   xlab("Cancer Stage") +
-  ylab("Count")
+  ylab("Count") +
+  ggtitle("Relative Abundance of Bacterial Genera and Patient Count by Cancer Stage")
 
 p2 <- melted_phyloseq %>%
   filter(OTU %in% top_genes) %>%
@@ -197,7 +224,7 @@ p2 <- melted_phyloseq %>%
           element_text(angle = 90,
                        hjust = 1)) +
   ylab("Relative Abundance") +
-  xlab("Cancer Stage") +
+  xlab("Cancer Stage")
 
 grid.newpage()
 grid.draw(rbind(ggplotGrob(p1), ggplotGrob(p2), size = "last"))
