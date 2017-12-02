@@ -205,15 +205,16 @@ metadata_in <- read.table(paste0("data/metadata/",
                           row.names = 8) # sets sample IDs to row names
 
 # supplementary table in addition to metadata_in
-supplementary_table <- read.table(paste0("data/metadata/",
-                                         "zam999117343sd2.txt"),
-                                  sep = "\t",
+supplementary_table <- read.csv(paste0("data/metadata/",
+                                  "zam999117343_sd2_supp_data.csv"),
                                   header = TRUE,
                                   stringsAsFactors = FALSE)
 
 # merge these two tables 
-merged.data <- merge(metadata_in, supplementary_table,
+metadata_in$Run_s <- row.names(metadata_in)
+merged_data <- merge(metadata_in, supplementary_table,
                      by = "Sample_Name_s")
+row.names(merged_data) <- merged_data$Run_s
 
 # read in the phylogeny, which was created from the fasta exported above
 # in Geneious by aligning the sequences with MAFFT and then building a
@@ -223,7 +224,7 @@ tree_in <- read_tree("output/sequence_variants_seqs_alignment_FastTree_Tree.newi
 # Construct phyloseq object (straightforward from dada2 outputs)
 phyloseq_obj <- phyloseq(otu_table(sequence_table_nochim,
                                    taxa_are_rows = FALSE), # sample-spp matrix
-                         sample_data(merged.data), # metadata for each sample
+                         sample_data(merged_data), # metadata for each sample
                          tax_table(taxa), # taxonomy for each sequence variant
                          phy_tree(tree_in)) # phylogeny from sequence variants
 

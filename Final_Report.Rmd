@@ -15,7 +15,7 @@ Breast cancer affects affects one in eight women in their lifetime and according
 
 The human microbiota refers to the collection of microbes inhabiting the human body; microbes inhabiting the human body outnumber human cells 10:1 [@xuan2014microbial]. This microbiota plays an integral role in human development and changes in an individual's composition have or an imbalance has been implicated in various human diseases. Individuals with periodonitis [@darveau2010periodontitis, @ximenez2000comparison], inflammatory bowel disease [@frank2007molecular], psoriasis [@gao2008substantial], asthma [@hilty2010disordered], diabetes [@larsen2010gut], bacterial vaginosis [@hummelen2010deep], and colorectal cancer [@mira2015microbial] have different bacterial communities than individuals. Although it is unclear whether the these microbial differences are a consequence or a cause of the disease, there is evidence in favor of a causal relationship, as healthy animals transplanted with feces from those with obesity, colitis, or colorectal cancer then go on to develop disease [@garrett2007communicable, @turnbaugh2009core, @zackular2013gut]. In obese individuals, the ratio of Firmicutes to Bacteroidetes in the colon is significantly higher than in lean individuals [@turnbaugh2006obesity, @ley2006microbial]. Placing these obese individuls on low-fat diets resulted in a decrease in this ratio, although not to the levels seen in lean individuals [@ley2006microbial]. In colon cancer, the overabundance of a single bacterial species *Fusobacterium nucleatum* correlates with disease and increased likelihood of lymph node metastasis [@castellarin2012fusobacterium]. In contrast to the detrimental affects of *Fusobacterium nucleatum*, the bacterium *Bacteroidetes fragilis* exerts a protective effect against colitis by modulating inflammatory immune responses in the gut [@mazmanian2008microbial]. These recent studies have made it increasingly apparent that microbiota composition as well as specific bacterial species can have either preventive or progressive effects in terms of maintaining health or encouraging disease development, respectively [@xuan2014microbial]. Thus, we are led to the question of what bacterial species, if any, have effect on breast cancer and how are these effects are manifested.  
 
-The first step in answering this question is determining that there is in fact a microbiome within the mammary tissue - a question that was addressed by Urbanick et al. (2014). In the female mammary gland, milk has been shown to contain bacterial species which ostensibly reach the ducts from the skin [@urbaniak2014microbiota]. The rationale of Urbaniak et al. (2014) was that given the nutrient-rich fatty composition of the female breast, the widespread vasculature and lympathics, and the diffuse location of the lobules and ducts leading from the nipple, bacteria would be widespread within the mammary glands, irrespective of lactation. Using 16S rRNA sequencing and culture, they analyzed breast tissue from 81 women with and without cancer in Canada and Ireland. A diverse bacteria population was detected within the tissues collected from sites all around the breast in women raging from 18 to 90 years old, not all of whom had a history of lactation. They stated that they successfully confirmed a breast microbiome in this study and added the study by Xuan et al. [@xuan2014microbial] that established the same conclusion. They found that *Proteobacteria* was the most abundant phylum in breast tissue where members of this phylum make up only a small portion of the overall bacterial community - a case unlike those seen in the vagina, oral cavity, bladder, skin, and gastrointestinal tract. This finding was consistent with other pieces of literature and suggested that breast tissue may in fact have a unique microbiota, distinct from that found at other body sites. The higher abundance of *Proteobacteria* and *Firmicutes* (specifically the class *Bacilli*) was perhaps due to host microbial adaptation to the fatty avid environment in the tissue. Another thing of interest was that *Proteobacteria* is also the principle phylum in human milk [@ward2013human] along with many of the same bacteria that they had detected in the tissue which raises the possibility that the tissue microbiota could be a source of bacterial inocula for babies. Despite having some difficulties with culturing different bacterial strains, all the bacteria that were cultured were also detected by 16s rRNA sequencing, supporting the argument that the DNA amplimers were from viable bcateria and not solely from remnant bcaterial DNA [@urbaniak2014microbiota]. The next step from here is determining how this breast microbioime is established and how it plays a role, if any role at all, in management of breast cancer. 
+The first step in answering this question is determining that there is in fact a microbiome within the mammary tissue - a question that was addressed by Urbanick et al. (2014). In the female mammary gland, milk has been shown to contain bacterial species which ostensibly reach the ducts from the skin [@urbaniak2014microbiota]. The rationale of Urbaniak et al. (2014) was that given the nutrient-rich fatty composition of the female breast, the widespread vasculature and lympathics, and the diffuse location of the lobules and ducts leading from the nipple, bacteria would be widespread within the mammary glands, irrespective of lactation. Using 16S rRNA sequencing and culture, they analyzed breast tissue from 81 women with and without cancer in Canada and Ireland. A diverse bacteria population was detected within the tissues collected from sites all around the breast in women raging from 18 to 90 years old, not all of whom had a history of lactation. They stated that they successfully confirmed a breast microbiome in this study and added the study by Xuan et al. [@xuan2014microbial] that established the same conclusion. They found that *Proteobacteria* was the most abundant phylum in breast tissue where members of this phylum make up only a small portion of the overall bacterial community - a case unlike those seen in the vagina, oral cavity, bladder, skin, and gastrointestinal tract. This finding was consistent with other pieces of literature and suggested that breast tissue may in fact have a unique microbiota, distinct from that found at other body sites. The higher abundance of *Proteobacteria* and *Firmicutes* (specifically the class *Bacilli*) was perhaps due to host microbial adaptation to the fatty acid environment in the tissue. Another thing of interest was that *Proteobacteria* is also the principle phylum in human milk [@ward2013human] along with many of the same bacteria that they had detected in the tissue which raises the possibility that the tissue microbiota could be a source of bacterial inocula for babies. Despite having some difficulties with culturing different bacterial strains, all the bacteria that were cultured were also detected by 16s rRNA sequencing, supporting the argument that the DNA amplimers were from viable bcateria and not solely from remnant bcaterial DNA [@urbaniak2014microbiota]. The next step from here is determining how this breast microbioime is established and how it plays a role, if any role at all, in management of breast cancer. 
 
 As they had already established that breast tissue microbiome exists in Canadian and Irish women [@urbaniak2014microbiota], Urbaniak et al. then went on to determine whether this local microbiome plays a role in modulating the risk of breast cancer development [@urbaniak2016microbiota]. From a new patient study group, they examined the breast microbiota of 70 women who varied across having breast cancer (normal adjacent tissue collected) or benign tumors (normal adjacent tissue collected) or were disease free. They isolated bacteria from cancer patients and then characterized and examined them for their abilities to induce DNA damage. The endeavour of Urbaniak et al. was to differentiate between baterial profiles in breast tissue of healthy women and those with breast cancer and see which bacteria influenced the progression or prevention of breast cancer. They believed that the host's local microbiome could be modulating the risk of breast cancer development and their first step to doing this was using 16S rRNA amplicon sequencing in order to differentiate bacterial profiles. 
 
@@ -25,11 +25,11 @@ The use of 16S rRNA gene sequences for bacterial identification has been by far 
 
 ## Study design
 
-Add about half a page here. In this section instead of first person (I/we), use the authors of the paper you selected, since you'll just be describing what they did, based on the methods in their paper.
+Urbaniak et al. collected fresh breast tissue from 71 women ranging from 19 to 90 years old who were undergoing breast surgery at St. Joseph's Hospital in London, Ontario, Canada. 58 of these women underwent lumpectomies or mastectomes for neither benign (*n* = 13) or cancerous (*n* = 45) tumors, and 23 were free of disease and underwent either breast reductions or enhancements. For those women with tumors, the tissue obtained for analysis was collected outside the marginal zone, approximately 5 cm away from the tumor.
 
 ## Sample origin and sequencing
 
-Urbaniak et al. collected fresh breast tissue from 71 women ranging from 19 to 90 years old who were undergoing breast surgery at St. Joseph's Hospital in London, Ontario, Canada. 58 of these women underwent lumpectomies or mastectomes for neither benign (*n* = 13) or cancerous (*n* = 45) tumors, and 23 were free of disease and underwent either breast reductions or enhancements. For those women with tumors, the tissue obtained for analysis was collected outside the marginal zone, approximately 5 cm away from the tumor. After excision, fresh tissue was immediately placed in a sterile vial on ice and homogenized within 30 minutes of collection. After tissue homogenates in sealed containers were thawed on ice, procedures for DNA isolation ensued. For the 16S rRNA gene sequencing, PCR amplification, the genomic DNA isolated from the clinical samples was amplified using barcoded primers that amplified the V6 hypervariable region of the 16S rRNA gene (70 bp long): V6-forward, 5′ACACTCTTTCCCTACACGACGCTCTTCCGATCTnnnn(8)CWACGCGARGAACCTTACC3′; and V6-reverse, 5′CGGTCTCGGCATTCCTGCTGAACCGCTCTTCCGATCTnnnn(8)ACRACACGAGCTGACGAC3′. The pooled PCR purified sample was then paired-end sequenced on the Illumina Mi-Seq platform using a 150 cycle kit with a paired-end 80-bp run at the London Regional Genomics Center, London, Ontario, Canada, following standard operating procedures. Custom Perl [@lindner2004easylinkage] and Bash [@badal2006package] scripts were used to to demultiplex the reads and assign barcoded reads to individual samples followed by multiple layers of filtering. 
+After excision, fresh tissue was immediately placed in a sterile vial on ice and homogenized within 30 minutes of collection. After tissue homogenates in sealed containers were thawed on ice, procedures for DNA isolation ensued. For the 16S rRNA gene sequencing, PCR amplification, the genomic DNA isolated from the clinical samples was amplified using barcoded primers that amplified the V6 hypervariable region of the 16S rRNA gene (70 bp long): V6-forward, 5′ACACTCTTTCCCTACACGACGCTCTTCCGATCTnnnn(8)CWACGCGARGAACCTTACC3′; and V6-reverse, 5′CGGTCTCGGCATTCCTGCTGAACCGCTCTTCCGATCTnnnn(8)ACRACACGAGCTGACGAC3′. The pooled PCR purified sample was then paired-end sequenced on the Illumina Mi-Seq platform using a 150 cycle kit with a paired-end 80-bp run at the London Regional Genomics Center, London, Ontario, Canada, following standard operating procedures. Custom Perl [@lindner2004easylinkage] and Bash [@badal2006package] scripts were used to to demultiplex the reads and assign barcoded reads to individual samples followed by multiple layers of filtering. 
 
 ## Computational
 
@@ -76,38 +76,122 @@ library("phyloseq")
 load("output/phyloseq_obj.RData")
 ```
 
-```{r load-supplementary-table, echo = FALSE}
-# Supplementary table in addition to metadata_in
-supplementary_table <- read.table(paste0("data/metadata/",
-                                 "zam999117343sd2.txt"),
-                          sep = "\t",
-                          header = TRUE,
-                          stringsAsFactors = FALSE)
+```{r example-phyloseq-plot-2, echo = FALSE}
+# phylogeny, yay!
+plot_tree(phyloseq_obj,
+          ladderize = TRUE) # this arranges the tree branches from short to long
 ```
 
-```{r count-by-age, echo = FALSE}
-merged.data %>%
-  group_by(age) %>%
-  tally() %>%
-  ggplot(aes(x = age,
-             y = n,
-             fill = age)) +
-    geom_col(position = "dodge") +
-    xlab("Age") +
-    ylab("Count") +
-    ggtitle("Distribution of Patients Across Age at Breast Surgery")
+```{r bar-plot-relative-abundance, echo = FALSE}
+melted_phyloseq <- psmelt(phyloseq_obj)
+
+top_50 <- melted_phyloseq %>%
+  group_by(OTU, Abundance) %>%
+  summarize(mean_abund = mean(Abundance)) %>%
+  arrange(desc(mean_abund)) %>%
+  head(n = 50)
+
+top_genes <- top_50 %>%
+  ungroup() %>%
+  select(OTU) %>%
+  unique() %>%
+  pull()
+
+#df %>% group_by(path1) %>% mutate(relAbundByPath = value / sum(value))
+ 
+melted_phyloseq %>%
+  filter(OTU %in% top_genes) %>%
+  group_by(Genus, tissue_type, tissue_type.1) %>%
+  summarize(mean_abund = mean(Abundance)) %>%
+  ggplot(aes(x = tissue_type,
+             y = mean_abund,
+             fill = Genus)) +
+    geom_col(color = "black") +
+  facet_wrap( ~ tissue_type.1) +
+    xlab("Tissue Type") +
+    ylab("Relative Abundance") +
+    ggtitle("Relative Abundance of Bacterial Genera Between Tissue Types")
+```
+
+```{r bar-plot-rel-abundance-pylum, echo = FALSE}
+melted_phyloseq %>%
+  group_by(Phylum) %>%
+  summarize(mean_abund = mean(Abundance),
+            sd_abund = sd(Abundance)) %>%
+  ggplot(aes(x = Phylum,
+             color = Phylum)) +
+    geom_errorbar(aes(ymin = mean_abund - sd_abund,
+                      ymax = mean_abund + sd_abund),
+                  width = 0.25) +
+      geom_point(aes(y = mean_abund)) +
+    theme(axis.text.x =
+            element_text(angle = 90,
+                         hjust = 1)) +
+    xlab("Bacterial Phyla") +
+    ylab("Relative Abundance") +
+    ggtitle("Relative Abundance of Bacterial Phyla")
+```
+
+```{r mean-and-sd-rel-abund echo = FALSE}
+melted_phyloseq %>%
+  filter(OTU %in% top_genes) %>%
+  group_by(Genus, tissue_type.1) %>%
+  summarize(mean_abund = mean(Abundance),
+            sd_abund = sd(Abundance)) %>%
+  ggplot(aes(x = tissue_type.1,
+             color = Genus)) +
+    geom_errorbar(aes(ymin = mean_abund - sd_abund,
+                      ymax = mean_abund + sd_abund),
+                  width = 0.25) +
+      geom_point(aes(y = mean_abund)) +
+  facet_wrap( ~ Genus) + 
+  theme(axis.text.x =
+            element_text(angle = 90,
+                         hjust = 1)) +
+    xlab("Tissue Type") +
+    ylab("Relative Abundance") +
+    ggtitle("Mean and Standard Deviation of Relative Abundance of Bacterial 
+            Genera Between Tissue Types Separated by Genus")
+```
+
+```{r type-of-tumour-by-abundance}
+melted_phyloseq %>%
+  filter(OTU %in% top_genes) %>%
+  group_by(Genus, type_of_tumour) %>%
+  summarize(mean_abund = mean(Abundance)) %>%
+  ggplot(aes(x = type_of_tumour,
+             y = mean_abund,
+             fill = Genus)) +
+    geom_col(color = "black") +
+  theme(axis.text.x =
+            element_text(angle = 90,
+                         hjust = 1)) +
+      ylab("Relative Abundance") +
+      xlab("Type of Tumour") +
+      ggtitle("Relative Abundance of Bacterial Genera Among Tumour Types")
+```
+
+```{r count-by-age-box-plot, echo = FALSE}
+merged_data %>%
+  group_by(tissue_type.1, age) %>%
+  ggplot(aes(x = tissue_type.1,
+             y = age,
+             color = tissue_type.1)) +
+      geom_boxplot(width = 0.5) +
+    xlab("Tissue Type") +
+    ylab("Age") +
+    ggtitle("Difference of Age at Breast Surgery by Tissue Type")
 ```
 
 ```{r age-by-cancer-stage-by-smoking-status, echo = FALSE}
 # this code looks at the relationship among cancer stage, age of diagnosis and smoking status
-final_table %>%
-  ggplot(aes(x = cancer_stage,
-             y = age_at_diagnosis)) +
-      geom_point(size = 1, aes(color = smoking_status)) +
-      ylab("Age at Diagnosis") +
+merged_data %>%
+  ggplot(aes(x = stage_of_cancer,
+             y = age)) +
+      geom_point(size = 1, aes(color = stage_of_cancer)) +
+      ylab("Age at Breast Surgery") +
       xlab("Cancer Stage") +
-      ggtitle("The Relationship Between Age at Diagnosis and Cancer Stage by 
-              Smoking Status")
+      ggtitle("The Relationship Between Age at Breast Surgery and Cancer Stage")
 ```
 
 In addition to a minimum of 5-10 figures/tables (and associated captions), you should include sufficient text in this section to describe what your findings were. Remember that in the results section you just describe what you found, but you don't interpret it - that happens in the discussion. 2-3 pages.
@@ -115,5 +199,7 @@ In addition to a minimum of 5-10 figures/tables (and associated captions), you s
 # Discussion
 
 Add around 3-4 pages interpreting your results and considering future directions one might take in analyzing these data.
+
+Representative because it was not random sampling - it was a small number of people as well as limited by those who happened to be in the hospital to get some sort of breast surgery. 
 
 # Sources Cited
