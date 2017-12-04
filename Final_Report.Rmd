@@ -218,6 +218,25 @@ grid.newpage()
 grid.draw(rbind(ggplotGrob(p1), ggplotGrob(p2), size = "last"))
 ```
 
+**Figure 4**: This figure shows the relative abundance of bacterial genera for each cancer stage. 
+
+After seeing the relationship between relative abundance of bacterial genera and tumor type, we were interested to see what the relationship was between relative abundance of bacterial genera and cancer stage (Figure 4). Here we see that the highest abundance is seen in cancer stage 4 while the number of patients with stage 4 cancer was the lowest (one person); the relative abundance from highest to lowest is *Escherichia/Shigella*, *Pseudomonas*, *Propionibacterium*, *Bacillus* and *Acinetobacter*. Stage 3 cancer, which had the second lowest number of patients, is made up of primarily *Staphylococcus* and *Pseudomonas*. Stage 2 cancer, which had the same number of patients as stage 0 cancer, only had *Pseudomonas* as the discernable bacteria. 
+
+```{r cancer-stage-by-tumour-type, echo = FALSE}
+sample_data(phyloseq_obj) %>%
+  group_by(stage_of_cancer, type_of_tumour) %>%
+  tally() %>%
+  ggplot(aes(x = stage_of_cancer,
+             y = n,
+             fill = type_of_tumour)) +
+    geom_col(color = "black") + 
+  ylab("Count") + 
+  xlab("Cancer Stage") +
+  ggtitle("Cancer Stage by Type of Tumour")
+```
+
+**Figure 5**: 
+
 ```{r bar-plot-rel-abundance-pylum, echo = FALSE}
 melted_phyloseq %>%
   group_by(Phylum) %>%
@@ -237,7 +256,7 @@ melted_phyloseq %>%
     ggtitle("Relative Abundance of Bacterial Phyla")
 ```
 
-**Figure **: This shows the relative abundance between
+**Figure 6**: This shows the relative abundance between
 
 ```{r count-by-age-box-plot, echo = FALSE}
 p3 <- melted_phyloseq %>%
@@ -269,6 +288,7 @@ grid.newpage()
 grid.draw(rbind(ggplotGrob(p3), ggplotGrob(p4), size = "last"))
 ```
 
+**Figure 7**
 
 In addition to a minimum of 5-10 figures/tables (and associated captions), you should include sufficient text in this section to describe what your findings were. Remember that in the results section you just describe what you found, but you don't interpret it - that happens in the discussion. 2-3 pages.
 
