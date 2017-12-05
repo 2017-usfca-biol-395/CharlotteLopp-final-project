@@ -211,7 +211,7 @@ supplementary_table <- read.csv(paste0("data/metadata/",
                                   stringsAsFactors = FALSE)
 
 # merge these two tables
-metadata_in$Run_s <- row_names(metadata_in)
+metadata_in$run_s <- row.names(metadata_in)
 merged_data <- merge(metadata_in, supplementary_table,
                      by = "Sample_Name_s")
 row.names(merged_data) <- merged_data$Run_s
