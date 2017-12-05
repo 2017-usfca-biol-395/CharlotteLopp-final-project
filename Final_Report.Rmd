@@ -171,7 +171,7 @@ p1 <- sample_data(phyloseq_obj) %>%
   geom_col(position = "dodge") +
   xlab("Cancer Stage") +
   ylab("Count") +
-  ggtitle("Relative Abundance of Bacterial Genera and Patient Count by Cancer 
+  ggtitle("Relative Abundance of Bacterial Genera and Patient Count by Cancer
           Stage")
 
 p2 <- melted_phyloseq %>%
@@ -211,7 +211,7 @@ sample_data(phyloseq_obj) %>%
 
 **Figure 5**: This figure shows the relationship between cancer stage and type of tumor. 
 
-In cancer stage 4, the only type of tumor is "invasive ductal." 
+In cancer stage 4, the only type of tumor is "invasive ductal." For cancer stage 3, there's "invasive lobular," "invasive ductal," and "invasive." "Invasive mammary carcinoma, tubular features," "invasive mammary carcinoma," "invasive ductal," and "invasive carsinoma" are seen in cancer stage 2. In cancer stage 1, we see the majority being either "invasive mammary carcinoma" and "invasive ductal" with the rest being "invasive lobular." Most of cancer stage 0 is "DCIS" with the rest being "DCIS (multifocal," "encapsulated papillary carcinoma," and "intraductal papilloma."
 
 ```{r bar-plot-rel-abundance-pylum, echo = FALSE}
 melted_phyloseq %>%
