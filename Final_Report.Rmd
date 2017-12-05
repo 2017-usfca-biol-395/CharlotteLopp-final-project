@@ -195,7 +195,7 @@ grid.draw(rbind(ggplotGrob(p1), ggplotGrob(p2), size = "last"))
 
 **Figure 4**: This figure shows the relative abundance of bacterial genera for each cancer stage. 
 
-Once we saw the relative abundances between
+Once we saw the relationship between relative abundance of bacterial genera and cancer stage, we wondered how tumor types were distributed across the cancer stages. Thus, we look at the relationship between the two with the relative abundance of bacterial genera 
 
 ```{r cancer-stage-by-tumour-type, echo = FALSE}
 sample_data(phyloseq_obj) %>%

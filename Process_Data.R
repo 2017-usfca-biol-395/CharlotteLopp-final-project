@@ -1,4 +1,4 @@
-## ----load-libraries, message = FALSE-------------------------------------
+## ----load-libraries-----------------------------------------------------
 # Be sure to install these packages before running this script
 # They can be installed either with the intall.packages() function
 # or with the 'Packages' pane in RStudio
@@ -210,7 +210,7 @@ supplementary_table <- read.csv(paste0("data/metadata/",
                                   header = TRUE,
                                   stringsAsFactors = FALSE)
 
-# merge these two tables 
+# merge these two tables
 metadata_in$Run_s <- row.names(metadata_in)
 merged_data <- merge(metadata_in, supplementary_table,
                      by = "Sample_Name_s")
