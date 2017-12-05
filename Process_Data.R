@@ -211,7 +211,7 @@ supplementary_table <- read.csv(paste0("data/metadata/",
                                   stringsAsFactors = FALSE)
 
 # merge these two tables
-metadata_in$Run_s <- row.names(metadata_in)
+metadata_in$Run_s <- row_names(metadata_in)
 merged_data <- merge(metadata_in, supplementary_table,
                      by = "Sample_Name_s")
 row.names(merged_data) <- merged_data$Run_s
@@ -219,7 +219,8 @@ row.names(merged_data) <- merged_data$Run_s
 # read in the phylogeny, which was created from the fasta exported above
 # in Geneious by aligning the sequences with MAFFT and then building a
 # Maximum-Likelihood tree with RAxML
-tree_in <- read_tree("output/sequence_variants_seqs_alignment_FastTree_Tree.newick")
+tree_in <- read_tree("output/
+                     sequence_variants_seqs_alignment_FastTree_Tree.newick")
 
 # Construct phyloseq object (straightforward from dada2 outputs)
 phyloseq_obj <- phyloseq(otu_table(sequence_table_nochim,
