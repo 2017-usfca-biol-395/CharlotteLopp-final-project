@@ -95,8 +95,6 @@ top_genes <- top_50 %>%
   select(OTU) %>%
   unique() %>%
   pull()
-
-#df %>% group_by(path1) %>% mutate(relAbundByPath = value / sum(value))
  
 melted_phyloseq %>%
   filter(OTU %in% top_genes) %>%
@@ -106,7 +104,7 @@ melted_phyloseq %>%
              y = mean_abund,
              fill = Genus)) +
     geom_col(color = "black") +
-  facet_wrap( ~ tissue_type.1) +
+  facet_wrap(~ tissue_type.1) +
     xlab("Tissue Type") +
     ylab("Relative Abundance") +
     ggtitle("Relative Abundance of Bacterial Genera Between Tissue Types")
@@ -128,13 +126,13 @@ melted_phyloseq %>%
                       ymax = mean_abund + sd_abund),
                   width = 0.25) +
       geom_point(aes(y = mean_abund)) +
-  facet_wrap( ~ Genus) + 
+  facet_wrap(~ Genus) +
   theme(axis.text.x =
             element_text(angle = 90,
                          hjust = 1)) +
     xlab("Tissue Type") +
     ylab("Relative Abundance") +
-    ggtitle("Mean and Standard Deviation of Relative Abundance of Bacterial 
+    ggtitle("Mean and Standard Deviation of Relative Abundance of Bacterial
             Genera Between Tissue Types Separated by Genus")
 ```
 
@@ -173,7 +171,8 @@ p1 <- sample_data(phyloseq_obj) %>%
   geom_col(position = "dodge") +
   xlab("Cancer Stage") +
   ylab("Count") +
-  ggtitle("Relative Abundance of Bacterial Genera and Patient Count by Cancer Stage")
+  ggtitle("Relative Abundance of Bacterial Genera and Patient Count by Cancer 
+          Stage")
 
 p2 <- melted_phyloseq %>%
   filter(OTU %in% top_genes) %>%
@@ -195,7 +194,7 @@ grid.draw(rbind(ggplotGrob(p1), ggplotGrob(p2), size = "last"))
 
 **Figure 4**: This figure shows the relative abundance of bacterial genera for each cancer stage. 
 
-Once we saw the relationship between relative abundance of bacterial genera and cancer stage, we wondered how tumor types were distributed across the cancer stages (Figure 5). 
+Once we saw the relationship between relative abundance of bacterial genera and cancer stage, we wondered how tumor types were distributed across the cancer stages (Figure 5). Since we had already established what the relative abundance of bacterial genera was for each type of tumor, we believed this new figure would shed some more light on the roles that certain bacteria play. 
 
 ```{r cancer-stage-by-tumour-type, echo = FALSE}
 sample_data(phyloseq_obj) %>%
@@ -204,13 +203,15 @@ sample_data(phyloseq_obj) %>%
   ggplot(aes(x = stage_of_cancer,
              y = n,
              fill = type_of_tumour)) +
-    geom_col(color = "black") + 
-  ylab("Count") + 
+    geom_col(color = "black") +
+  ylab("Count") +
   xlab("Cancer Stage") +
   ggtitle("Cancer Stage by Type of Tumour")
 ```
 
 **Figure 5**: This figure shows the relationship between cancer stage and type of tumor. 
+
+In cancer stage 4, the only type of tumor is "invasive ductal." 
 
 ```{r bar-plot-rel-abundance-pylum, echo = FALSE}
 melted_phyloseq %>%
@@ -256,7 +257,7 @@ p4 <- melted_phyloseq %>%
                   width = 0.25) +
       geom_point(aes(y = mean_age)) +
   xlab("Tissue Type") +
-  ylab("Age") + 
+  ylab("Age") +
   ggtitle("B")
 
 grid.newpage()
