@@ -234,6 +234,8 @@ melted_phyloseq %>%
 
 **Figure 6**: This shows the relative abundance of bacterial phyla. 
 
+Finally, we wanted to look at how the patients were distributed across tissue type in terms of age (Figure 7). In 7A we see that the median for patients with benign tumors is just above 30, while for patients with cancerous tumors is just above 60, and for healthy patients it is just above 50. The thick line within the box represents the median. The box itself signifies the first and third quartile meaning that the box represents where 50% of the samples lie. The whiskers show the miniumum and maximum of the data points. In 7B we see that the mean is about 35 for patients with benign tumors, for patients with cancerous tumors its just above 60 and for healthy patients its just below 50. The point represents the mean while the bars represent the standard deviation.
+
 ```{r count-by-age-box-plot, echo = FALSE}
 p3 <- melted_phyloseq %>%
   group_by(tissue_type.1, age) %>%
@@ -264,9 +266,7 @@ grid.newpage()
 grid.draw(rbind(ggplotGrob(p3), ggplotGrob(p4), size = "last"))
 ```
 
-**Figure 7**
-
-In addition to a minimum of 5-10 figures/tables (and associated captions), you should include sufficient text in this section to describe what your findings were. Remember that in the results section you just describe what you found, but you don't interpret it - that happens in the discussion. 2-3 pages.
+**Figure 7**: This figure shows the relationship between age and tissue type. 
 
 # Discussion
 

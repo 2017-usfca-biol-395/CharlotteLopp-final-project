@@ -61,27 +61,35 @@ We were then curious about the relationship between the relative abundance of ba
 
 **Figure 3**: This figure shows the relative abundance of bacterial genera among the different types of tumors seen in the cancer patients.
 
+After seeing the relationship between relative abundance of bacterial genera and tumor type, we were interested to see what the relationship was between relative abundance of bacterial genera and cancer stage (Figure 4). Here we see that the highest abundance is seen in cancer stage 4 while the number of patients with stage 4 cancer was the lowest (one person); the relative abundance from highest to lowest is *Escherichia/Shigella*, *Pseudomonas*, *Propionibacterium*, *Bacillus* and *Acinetobacter*. Stage 3 cancer, which had the second lowest number of patients, is made up of primarily *Staphylococcus* and *Pseudomonas*. Stage 2 cancer, which had the same number of patients as stage 0 cancer, only had *Pseudomonas* as the discernable bacteria. For cancer stage 1, which had the most patients, the abundance is *Pseudomonas*, *Bacillus*, *Escherichia/Shigella* and *Delftia*. Finally, for stage 0 cancer, the abundance is *Pseudomonas*, *Bacillus*, and *Escherichia/Shigella*.
+
     ## Warning: Removed 1 rows containing missing values (geom_col).
 
     ## Warning: Removed 12 rows containing missing values (position_stack).
-
-    ## Warning: Removed 9 rows containing missing values (position_stack).
 
 ![](Final_Report_files/figure-markdown_github-ascii_identifiers/cancer-stage-by-abundance-1.png)
 
 **Figure 4**: This figure shows the relative abundance of bacterial genera for each cancer stage.
 
-After seeing the relationship between relative abundance of bacterial genera and tumor type, we were interested to see what the relationship was between relative abundance of bacterial genera and cancer stage (Figure 4). Here we see that the highest abundance is seen in cancer stage 4 while the number of patients with stage 4 cancer was the lowest (one person); the relative abundance from highest to lowest is *Escherichia/Shigella*, *Pseudomonas*, *Propionibacterium*, *Bacillus* and *Acinetobacter*.
+Once we saw the relationship between relative abundance of bacterial genera and cancer stage, we wondered how tumor types were distributed across the cancer stages (Figure 5). Since we had already established what the relative abundance of bacterial genera was for each type of tumor, we believed this new figure would shed some more light on the roles that certain bacteria play. In cancer stage 4, the only type of tumor is "invasive ductal." For cancer stage 3, there's "invasive lobular," "invasive ductal," and "invasive." "Invasive mammary carcinoma, tubular features," "invasive mammary carcinoma," "invasive ductal," and "invasive carsinoma" are seen in cancer stage 2. In cancer stage 1, we see the majority being either "invasive mammary carcinoma" and "invasive ductal" with the rest being "invasive lobular." Most of cancer stage 0 is "DCIS" with the rest being "DCIS (multifocal," "encapsulated papillary carcinoma," and "intraductal papilloma." "Invasive ductal" is seen in every cancer stage except for stage 0.
+
+    ## Warning: Removed 9 rows containing missing values (position_stack).
+
+![](Final_Report_files/figure-markdown_github-ascii_identifiers/cancer-stage-by-tumour-type-1.png)
+
+**Figure 5**: This figure shows the relationship between cancer stage and type of tumor.
+
+After seeing different relationships involving relative abudance of bacterial genera, we thought it would be benefical to see the relative abundance among bacterial phyla (Figure 6). Visualizing this relationship would also be helpful in relating the findings in this paper with other literature on the same subject. The largest abundance is in *Actinobacteria* followed by *Firmicutes*, *Proteobacteria*, *Bacteroidetes* and *Cyanobacteria/Chloroplast* which are about the same, *Fusobacteria* coming in not far behind, *Verrucomicrobia*, and *Spirochaetes*.
 
 ![](Final_Report_files/figure-markdown_github-ascii_identifiers/bar-plot-rel-abundance-pylum-1.png)
 
-**Figure 5**: This shows the relative abundance between
+**Figure 6**: This shows the relative abundance of bacterial phyla.
+
+Finally, we wanted to look at how the patients were distributed across tissue type in terms of age (Figure 7). In 7A we see that the median for patients with benign tumors is just above 30, while for patients with cancerous tumors is just above 60, and for healthy patients it is just above 50. The thick line within the box represents the median. The box itself signifies the first and third quartile meaning that the box represents where 50% of the samples lie. The whiskers show the miniumum and maximum of the data points. In 7B we see that the mean is about 35 for patients with benign tumors, for patients with cancerous tumors its just above 60 and for healthy patients its just below 50. The point represents the mean while the bars represent the standard deviation.
 
 ![](Final_Report_files/figure-markdown_github-ascii_identifiers/count-by-age-box-plot-1.png)
 
-**Figure 6**
-
-In addition to a minimum of 5-10 figures/tables (and associated captions), you should include sufficient text in this section to describe what your findings were. Remember that in the results section you just describe what you found, but you don't interpret it - that happens in the discussion. 2-3 pages.
+**Figure 7**: This figure shows the relationship between age and tissue type.
 
 Discussion
 ==========
