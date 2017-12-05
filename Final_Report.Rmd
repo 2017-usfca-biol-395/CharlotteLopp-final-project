@@ -194,7 +194,7 @@ grid.draw(rbind(ggplotGrob(p1), ggplotGrob(p2), size = "last"))
 
 **Figure 4**: This figure shows the relative abundance of bacterial genera for each cancer stage. 
 
-Once we saw the relationship between relative abundance of bacterial genera and cancer stage, we wondered how tumor types were distributed across the cancer stages (Figure 5). Since we had already established what the relative abundance of bacterial genera was for each type of tumor, we believed this new figure would shed some more light on the roles that certain bacteria play. 
+Once we saw the relationship between relative abundance of bacterial genera and cancer stage, we wondered how tumor types were distributed across the cancer stages (Figure 5). Since we had already established what the relative abundance of bacterial genera was for each type of tumor, we believed this new figure would shed some more light on the roles that certain bacteria play. In cancer stage 4, the only type of tumor is "invasive ductal." For cancer stage 3, there's "invasive lobular," "invasive ductal," and "invasive." "Invasive mammary carcinoma, tubular features," "invasive mammary carcinoma," "invasive ductal," and "invasive carsinoma" are seen in cancer stage 2. In cancer stage 1, we see the majority being either "invasive mammary carcinoma" and "invasive ductal" with the rest being "invasive lobular." Most of cancer stage 0 is "DCIS" with the rest being "DCIS (multifocal," "encapsulated papillary carcinoma," and "intraductal papilloma." "Invasive ductal" is seen in every cancer stage except for stage 0. 
 
 ```{r cancer-stage-by-tumour-type, echo = FALSE}
 sample_data(phyloseq_obj) %>%
@@ -211,7 +211,7 @@ sample_data(phyloseq_obj) %>%
 
 **Figure 5**: This figure shows the relationship between cancer stage and type of tumor. 
 
-In cancer stage 4, the only type of tumor is "invasive ductal." For cancer stage 3, there's "invasive lobular," "invasive ductal," and "invasive." "Invasive mammary carcinoma, tubular features," "invasive mammary carcinoma," "invasive ductal," and "invasive carsinoma" are seen in cancer stage 2. In cancer stage 1, we see the majority being either "invasive mammary carcinoma" and "invasive ductal" with the rest being "invasive lobular." Most of cancer stage 0 is "DCIS" with the rest being "DCIS (multifocal," "encapsulated papillary carcinoma," and "intraductal papilloma."
+After seeing different relationships involving relative abudance of bacterial genera, we thought it would be benefical to see the relative abundance among bacterial phyla (Figure 6). Visualizing this relationship would also be helpful in relating the findings in this paper with other literature on the same subject. The largest abundance is in *Actinobacteria* followed by *Firmicutes*, *Proteobacteria*, *Bacteroidetes* and *Cyanobacteria/Chloroplast* which are about the same, *Fusobacteria* coming in not far behind, *Verrucomicrobia*, and *Spirochaetes*. 
 
 ```{r bar-plot-rel-abundance-pylum, echo = FALSE}
 melted_phyloseq %>%
@@ -232,7 +232,7 @@ melted_phyloseq %>%
     ggtitle("Relative Abundance of Bacterial Phyla")
 ```
 
-**Figure 6**: This shows the relative abundance between
+**Figure 6**: This shows the relative abundance of bacterial phyla. 
 
 ```{r count-by-age-box-plot, echo = FALSE}
 p3 <- melted_phyloseq %>%
