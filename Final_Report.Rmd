@@ -82,6 +82,10 @@ load("output/phyloseq_obj.RData")
 In order to look at bacterial relative abundance in a meaningful way, we had to first narrow down the number of genera we were looking at by separating those with the highest abundance. Figure 1 shows the 11 most abundant genera seen in normal adjacent tissue in patients with benign tumors, normal adjacent tissue in patients with cancerous tumors, and normal tissue in healthy patients. The relative abundance seen in patients wih benign tumors, from greatest to least, is *Micrococcus*, *Bacillus*, *Pseudomonas*, *Escherichia/Shigella*, *Acinetobacter*, *Propionibacterium*, and *Delftia*. Looking at patients with cancerous tumours, we see the following relative abundance: *Pseudomonas*, *Bacillus*, *Escherichia/Shigella*, *Delftia*, *Propionibacterium*, *Staphylococcus*, and *Acinetobacter*. The relative abundance in healthy patients is as follows: *Pseudomonas*, *Micrococcus*, *Prevotella*, *Escherichia/Shigella*, *Propionibacterium*, *Acinetobacter*, *Ralstonia*, *Lactobacillus*, *Delftia* and *Bacillus*. Every bacterial genera is represented in healthy patients except for *Staphylococcus*. 
 
 ```{r bar-plot-relative-abundance, echo = FALSE}
+# Create melted phyloseq in order to be able to
+# calculate relative abundance. Look at the top
+# occurring bacteria as there are too many at the
+# genera level.
 melted_phyloseq <- psmelt(phyloseq_obj)
 
 top_50 <- melted_phyloseq %>%
@@ -116,6 +120,8 @@ melted_phyloseq %>%
 While Figure 1 allows for visualization of the bacterial abundance relative to one another within a tissue type, the relative abundance of a bacterial genus across all three tissue is not as easily discernable. Thus, our next step was to calculate the mean and standard deviation of each bacterial abundance across all three tissue types for comparison amongst one another (Figure 2). A higher abundance is seen in cancer patients than healthy patients for *Acinetobacter*, *Bacillus*, *Delftia*, *Escherichia/Shigella*, *Micrococcus*, *Staphylococcus*, and *Propionibacterium* (although this difference is barely discernable). A higher abundance is seen in healthy patients than cancer patients for *Lactobacillus*, *Prevotella*, and *Ralstonia*. There is no noticeable difference in terms of abundance between cancer or healthy patients for *Pseudomonas*. The largest margins of difference in relative abundance between cancer patients and healthy patients are seen in *Bacillus*, *Escherichia/Shigella*, and *Micrococcus*. However, for *Micrococcus* benign tumor patients have the greatest relative abundance, then healthy patients have the next highest, followed by cancer tumor patients who have a relative abundance of zero.
 
 ```{r mean-and-sd-rel-abund, echo = FALSE}
+# Use the melted phyloseq to create mean and sd
+# figure of relative abundance.
 melted_phyloseq %>%
   filter(OTU %in% top_genes) %>%
   group_by(Genus, tissue_type.1) %>%
@@ -143,6 +149,12 @@ We were then curious about the relationship between the relative abundance of ba
 
 
 ```{r type-of-tumour-by-abundance, echo = FALSE}
+# Look at relative abundance by tumor type. Note
+# that postion = "fill" is what makes everything
+# on a 1 point scale which is what makes it all
+# at relative abundance and then you don't hav to
+# worry about the number of patients in each subset
+# you are creating - like tumor type, age, etc.
 melted_phyloseq %>%
   filter(OTU %in% top_genes) %>%
   group_by(Genus, type_of_tumour) %>%
@@ -165,6 +177,14 @@ melted_phyloseq %>%
 After seeing the relationship between relative abundance of bacterial genera and tumor type, we were interested to see what the relationship was between relative abundance of bacterial genera and cancer stage (Figure 4). Here we see that for stage cancer 4, the relative abundance from highest to lowest is *Escherichia/Shigella*, *Pseudomonas*, *Propionibacterium*, *Bacillus* and *Acinetobacter*. Stage 4 has the lowest number of patients, the number being one, and has the highest relative abundance of *Escherichia/Shigella* of all of the cancer stages. Stage 3 cancer, which had the second lowest number of patients, is made up of primarily *Staphylococcus* and *Pseudomonas*  followed by smaller amounts of *Acinetobacter*, *Propionibacterium*, *Escherichia/Shigella* and *Bacillus*. This stage is the only stage to exhibit the presence of *Staphylococcus*. Stage 2 cancer, which had the same number of patients as stage 0 cancer, has *Pseudomonas* as the most abundant bacteria. The rest of the abundance from largest amount to smallest is *Escherichia/Shigella*, *Propionibacterium*, *Bacillus*, *Acinetobacter*, and *Delftia*. For cancer stage 1, which had the most patients, the abundance is *Pseudomonas*, *Bacillus*, *Escherichia/Shigella*, *Delftia*, *Acinetobacter*, and *Propionibacterium*. Finally, for stage 0 cancer, the abundance is *Pseudomonas*, *Bacillus*, *Escherichia/Shigella*, *Propionibacterium*, *Delftia*, and *Acinetobacter*. 
 
 ```{r cancer-stage-by-abundance, echo = FALSE}
+# Create p1 and p2 in order to create a figure
+# that combines the two. They must have the same
+# x axis in order for this to be successful and
+# you cannot combine two different types of graphs
+# using this command. Also, the reason we used
+# sample_data(phyloseq_obj) instead of merged_data
+# is because for knitting, when merged_data was
+# used the knit would always fail.
 p1 <- sample_data(phyloseq_obj) %>%
   group_by(stage_of_cancer) %>%
   tally() %>%
@@ -201,6 +221,10 @@ grid.draw(rbind(ggplotGrob(p1), ggplotGrob(p2), size = "last"))
 Once we saw the relationship between relative abundance of bacterial genera and cancer stage, we wondered how tumor types were distributed across the cancer stages (Figure 5). Since we had already established what the relative abundance of bacterial genera was for each type of tumor, we believed this new figure would shed some more light on the roles that certain bacteria play. In cancer stage 4, the only type of tumor is "invasive ductal." For cancer stage 3, there's "invasive lobular," "invasive ductal," and "invasive." "Invasive mammary carcinoma, tubular features," "invasive mammary carcinoma," "invasive ductal," and "invasive carsinoma" are seen in cancer stage 2. In cancer stage 1, we see the majority being either "invasive mammary carcinoma" and "invasive ductal" with the rest being "invasive lobular." Most of cancer stage 0 is "DCIS" with the rest being "DCIS (multifocal," "encapsulated papillary carcinoma," and "intraductal papilloma." "Invasive ductal" is seen in every cancer stage except for stage 0. 
 
 ```{r cancer-stage-by-tumour-type, echo = FALSE}
+# Look at which tumors were in which cancer stage
+# in order to connect all the dots and relationships
+# in terms of the trends we see in bacterial
+# abudnance.
 sample_data(phyloseq_obj) %>%
   group_by(stage_of_cancer, type_of_tumour) %>%
   tally() %>%
@@ -218,6 +242,10 @@ sample_data(phyloseq_obj) %>%
 After seeing different relationships involving relative abudance of bacterial genera, we thought it would be benefical to see the relative abundance among bacterial phyla (Figure 6). Visualizing this relationship would also be helpful in relating the findings in this paper with other literature on the same subject. The largest abundance is in *Actinobacteria* followed by *Firmicutes*, *Proteobacteria*, *Bacteroidetes* and *Cyanobacteria/Chloroplast* which are about the same, *Fusobacteria* coming in not far behind, *Verrucomicrobia*, and *Spirochaetes*. 
 
 ```{r bar-plot-rel-abundance-pylum, echo = FALSE}
+# Look at the relative abundance of the bacteria
+# at the level of Phylum in addition to Genus -
+# another layer of visualization to better
+# understand the data and the resulting trends.
 melted_phyloseq %>%
   group_by(Phylum) %>%
   summarize(mean_abund = mean(Abundance),
@@ -241,6 +269,10 @@ melted_phyloseq %>%
 Finally, we wanted to look at how the patients were distributed across tissue type in terms of age (Figure 7). In 7A we see that the median for patients with benign tumors is just above 30, while for patients with cancerous tumors is just above 60, and for healthy patients it is just above 50. The thick line within the box represents the median. The box itself signifies the first and third quartile meaning that the box represents where 50% of the samples lie. The whiskers show the miniumum and maximum of the data points. In 7B we see that the mean is about 35 for patients with benign tumors, for patients with cancerous tumors its just above 60 and for healthy patients its just below 50. The point represents the mean while the bars represent the standard deviation.
 
 ```{r count-by-age-box-plot, echo = FALSE}
+# Creating p3 and p4 so we can use the same
+# commands as before to create a combined
+# figure. Again, they had to have the same
+# x axis.
 p3 <- melted_phyloseq %>%
   group_by(tissue_type.1, age) %>%
   ggplot(aes(x = tissue_type.1,
@@ -282,13 +314,12 @@ What we see in Figure 2 futher supports our observations in Figure 1; there is a
 
 In follow-up to that query, we then looked at the relationship between relative abundance of bacterial genera and the tumor types seen in patients (Figure 3). It is interesting to note that *Bacillus* and *Escherichia/Shigella* were seen in almost every tumor type except two and one respectively. This makes sense considering the roles they play in tumor growth, cell proliferation, and DNA-strand breaks. It was surprising to see *Lactobacillus* and *Prevotella* appear in any cancer patient tumor types at all although they were present in very few and in very low abundances. "Intraductal papillomata, no atypia" was almost entirely dominated *Micrococcus* while "invasive" was almost entirely dominated by *Staphylococcus*. Observing this trend, we were curious if the high abundance of these bacteria were in any way causal to their respective tumor types or were merely a result of those tumor types. Also, there is a very high abundance of *Bacillus* in "calcification," "invasive lobular," and "mammary hamartoma" (in addition to it being present in almost every tumor type) whereas there is practically no *Bacillus* present in "N/A" which would be the healthy patients without any sort of tumor. Would decreasing relative abundance of *Bacillus* decrease the occurrence of these three types of tumors? Would it have an even greater effect in that there would be a decrease of tumors? Or would there be no affect at all? The same goes for "invasive" and "intraductal papillomata, no atypia" - would a decrease in *Staphylococcus* and *Micrococcus* result in a decreased occurrence of these tumors or even no tumor development at all? 
 
+Another relationship we were interested in was relative abundance of bacterial genera and cancer stage (Figure 4). When looking at this relationship, we see that the highest abundance of *Escherichia/Shigella* is in stage 4 patients while *Staphylococcus* dominates stage 3. *Escherichia/Shigella* is the majority after *Pseudomonas* for stage 2 cancer and *Bacillus* is the majority for both cancer stages 0 and 1. Considering that these three bacteria (*Escherichia/Shigella*, *Staphylococcus*, and *Bacillus*) have been the leading established bacteria so far in terms of being indicative or perhaps even promoting tumor growth, it is hardly surprising to see them present as a majority when looking at cancer stages. However, perhaps this trend is indicative of the progression that the microbiome goes through as patients progress through the cancer stages - first they have a majority of *Bacillus* which then decreases for stage 1 while *Escherichia/Shigella* increases, *Bacillus* and *Escherichia/Shigella* both decrease slightly for stage 3, stage 4 is characterized by a majority of *Staphylococcus*, and finally in stage 5 *Escherichia/Shigella* takes the large majority. It is worth noting, however, that although the bacteria are represented by their relative abundance, how many patients that are in each cancer stage still matters; stage 4 only has one patient and so if there were more patients, like over 10 as in stage 1, there may be a different bacteria composition than the one we see here. Another factor is the type of tumors represented in each cancer stage (Figure 5). 
+
+If the correlation in terms of microbiota composition lies in tumor type, it would be worth looking into the occurrence of each tumor type in each cancer stage. Here we see that "invasive ductal" tumors are in every cancer stage except for stage 0 and since we saw elevated levels of *Escherichia/Shigella* in Figure 4 for stage 4, that elevation must come from "invasive ductal" tumor type. Looking back at Figure 3, we see that "invasive ductal" does indeed have the second highest abundance of *Escherichia/Shigella* of all of the types of tumors. "Invasive lobular" is seen in stage 1 and 3 and "invasive mammary carcinoma" is seen in stages 1 and 2. Looking back at Figure 3, we see that "invasive lobular" had the second highest abundance of *Bacillus* while "invasive mammary carcinoma" had a majority of *Pseudomonas* with very little of anything else. This further explains the trends that we see in Figure 4 but also suggests that in order to better explore this idea of a correlation between microbiome composition and cancer stage, we would need to have more of an equal spread of patients across the different cancer stages.
 
 
 
-
-Figure 2: This opens avenues to the question of does control abundances prevent such outcomes? etc 
-
-Figure 3: the levels at which Bac. and Staph. etc are present makes sense (that they are seen in almost all of the tumor types) but what about in terms of their relative abundances? Could this be indicative of the type of tumor? If abundance and presence were controlled, could this type of tumor be avoided? 
 
 We acknowledge that the average ages dif- fered between the two groups, with the cancer cohort having a mean and median age of 62 years and the healthy cohort having a mean age of 49 years and a median age of 53 years. Considering that the mean and median ages of the benign group were 38 years and 36 years, respectively, and that the microbial profiles did not differ between the benign and cancer groups, we do not believe that the differences observed between the healthy and the cancer groups were due to difference in ages.
 
