@@ -1,6 +1,10 @@
 ---
+<<<<<<< HEAD
 title: 'Final Report: The Relationship between Microbiome Composition and Development
   of Breast Cancer'
+=======
+title: "Final Report: The Relationship between Microbiome Composition and Breast Cancer Development"
+>>>>>>> 9bc3880f44b6d175add1fcbb2cd7beaf0b821adf
 author: "Charlotte Lopp"
 date: "December 2, 2017"
 output:
