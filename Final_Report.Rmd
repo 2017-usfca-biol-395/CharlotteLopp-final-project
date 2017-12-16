@@ -1,12 +1,13 @@
 ---
-title: "Final Report: The Relationship between Microbiome Composition and Development of Breast Cancer"
+title: 'Final Report: The Relationship between Microbiome Composition and Development
+  of Breast Cancer'
 author: "Charlotte Lopp"
 date: "December 2, 2017"
 output:
-    github_document: default
-    word_document: default
-bibliography: references.bib
+  word_document: default
+  github_document: default
 csl: bioinformatics.csl
+bibliography: references.bib
 ---
 
 # Introduction 
